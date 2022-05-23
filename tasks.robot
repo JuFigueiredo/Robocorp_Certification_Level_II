@@ -14,11 +14,11 @@ Variables         MyVariables.py
 Order robots from RobotSpareBin Industries Inc
     [Teardown]    Close all dialogs
     @{orders}=    Get Orders
-    Wait Until Keyword Succeeds    3x    1 sec    Open the robot order website
+    Open the robot order website
     FOR    ${element}    IN    @{orders}
-        Wait Until Keyword Succeeds    3x    1 sec    Fill the form    ${element}
-        Wait Until Keyword Succeeds    3x    1 sec    Submit the order and save result    ${element}[Order number]
+        Fill the form    ${element}
+        Submit the order and save result    ${element}[Order number]
     END
-    Wait Until Keyword Succeeds    3x    1 sec    Zip orders folder
+    Zip orders folder
 
 
